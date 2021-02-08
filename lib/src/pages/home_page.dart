@@ -6,13 +6,7 @@ class HomePage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    // final _style = TextStyle();
     return Scaffold(
-      // drawer: Drawer(
-      //   child: Center(
-      //     child: Text('Hola'),
-      //   ),
-      // ),
       backgroundColor: Colors.grey[200],
       body: CustomScrollView(
         slivers: <Widget>[
@@ -22,8 +16,7 @@ class HomePage extends StatelessWidget {
             delegate: 
             SliverChildListDelegate([
               
-            // SizedBox(height: 30.0,),
-            
+            SizedBox(height: 30.0,),            
               
             _crearContacto(),
             _crearContacto(),
@@ -42,7 +35,12 @@ class HomePage extends StatelessWidget {
           )
         )
         ],
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: null,
+        child: Icon( Icons.add ),
+        backgroundColor: Colors.orange,
+      ),
     );
   }
 
@@ -72,31 +70,20 @@ class HomePage extends StatelessWidget {
       ),
       bottom: PreferredSize(
         child: Container(
-          // decoration: BoxDecoration(
-          //   // borderRadius: BorderRadius.circular(radius)
-          // ),
           padding: EdgeInsets.only(left: 10.0, right: 10.0),
           height: 60.0,
-          // color: Colors.red,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               IconButton(
                 icon: Icon(Icons.menu),
-                onPressed: (){
-                  // Scaffold.of(context).openDrawer();
-                }
+                onPressed: null
                 ),
               Text("Contatctos", style: TextStyle(fontSize: 20.0)),
               Expanded(child: SizedBox()),
               IconButton(icon: Icon(Icons.crop_free), onPressed: (){}),
               IconButton(icon: Icon(Icons.search), onPressed: (){}),
               IconButton(icon: Icon(Icons.more_vert), onPressed: (){}),
-              // Icon(Icons.menu, size: _size),
-              // SizedBox(width: 135.0,),
-              // Icon(Icons.crop_free, size: _size),
-              // Icon(Icons.search, size: _size),
-              // Icon(Icons.more_vert, size: _size),
             ],
           ),
         ),
